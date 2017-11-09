@@ -17,11 +17,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var numUsers = 0;
 
-io.configure(function() {
-  io.set("transports", ["xhr-polling"]);
-  io.set("polling duration", 10);
-});
-
 io.on('connection', function (socket) {
   var addedUser = false;
 
